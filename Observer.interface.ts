@@ -1,3 +1,5 @@
+import { Transportadora } from "./Transportadora";
+
 export interface Observer {
-    update(message: string): void;
+    update(transportadora: Transportadora): void;
 }

@@ -1,7 +1,7 @@
-import { Promocao } from './Promocao';
+import { Transportadora } from './Transportadora';
 import { Cliente } from './Cliente';
 
-const promocao = new Promocao();
+const transportadora = new Transportadora();
 const cliente1 = new Cliente(
     1,
     'Alice Smith',
@@ -30,11 +30,13 @@ const cliente2 = new Cliente(
     BigInt('22070010')
 );
 
-promocao.subscribe(cliente1);
-promocao.subscribe(cliente2);
+transportadora.subscribe(cliente1);
+transportadora.subscribe(cliente2);
 
-promocao.anunciarPromocao('50% de desconto em eletrônicos!');
+transportadora.setStatus('Pacote enviado!');
+transportadora.setStatus('Pacote em trânsito!');
+transportadora.setStatus('Pacote entregue!');
 
-promocao.unsubscribe(cliente2);
+transportadora.unsubscribe(cliente1);
 
-promocao.anunciarPromocao('Compre um e leve dois em todos os livros!');
+transportadora.setStatus('Pacote devolvido!');

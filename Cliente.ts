@@ -1,4 +1,5 @@
 import { Observer } from './Observer.interface';
+import { Transportadora } from './Transportadora';
 import { Pessoa } from './Pessoa';
 
 export class Cliente extends Pessoa implements Observer {
@@ -21,7 +22,7 @@ export class Cliente extends Pessoa implements Observer {
         this.idCliente = idCliente;
     }
 
-    public update(message: string): void {
-        console.log(`Notificação para o cliente ${this.nomeCompleto}: ${message}`);
+    update(transportadora: Transportadora): void {
+        console.log(`Cliente ${this.nomeCompleto}, nova atualização de status: ${transportadora.getStatus()}`);
     }
 }
